@@ -3,4 +3,4 @@
 https://github.com/New-dev0/Telethon/archive/Carbon.zip
 python-decouple
 python-dotenv
-pytgcalls==3.0.0.dev2
+pytgcalls==3.0.0.dev5
