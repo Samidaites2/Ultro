@@ -10,10 +10,10 @@ ENV TZ=Asia/Kolkata
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     # cloning the repo and installing requirements.
-    && git clone https://github.com/Samidaites2/Ultro.git /root/Samidaites2/ \
-    && pip install --upgrade pip
-    && pip3 install --no-cache-dir -r root/Samidaites2/requirements.txt \
-    && pip3 install av --no-binary av
+git clone https://github.com/Samidaites2/Ultro.git /root/Samidaites2/ \
+pip install --upgrade pip
+pip3 install --no-cache-dir -r root/Samidaites2/requirements.txt \
+pip3 install av --no-binary av
 
 RUN pip3 install --no-cache-dir -r https://raw.githubusercontent.com/Samidaites2/Ultroid/main/resources/startup/optional-requirements.txt
 # Railway's banned dependency
