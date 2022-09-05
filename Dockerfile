@@ -3,7 +3,7 @@
 # This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
-FROM Samidaites2/ultroid:main
+FROM Samidaites2/Ultro:main
 
 # set timezone
 ENV TZ=Asia/Kolkata
@@ -13,13 +13,13 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     && pip3 install --no-cache-dir -r root/Samidaites2/requirements.txt \
     && pip3 install av --no-binary av
 
-RUN pip3 install --no-cache-dir -r https://raw.githubusercontent.com/Randi356/Ultroid/main/resources/startup/optional-requirements.txt
+RUN pip3 install --no-cache-dir -r https://raw.githubusercontent.com/Samidaites2/Ultroid/main/resources/startup/optional-requirements.txt
 
 # Railway's banned dependency
 RUN if [ ! $RAILWAY_STATIC_URL ]; then pip3 install --no-cache-dir yt-dlp; fi
 
 # changing workdir
-WORKDIR "/root/Samidaites2"
+WORKDIR /root/Samidaites2/
 
 # start the bot
 CMD ["bash", "startup"]
